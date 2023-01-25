@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.core.Is.*;
+
 class OwnerTest {
     @Test
     void dependantAssertions() {
@@ -20,5 +23,7 @@ class OwnerTest {
                         () -> assertEquals("Key West", owner.getCity(), "City did not match"),
                         () -> assertEquals("1231231234", owner.getTelephone()))
         );
+
+        assertThat(owner.getCity(), is("Key West"));
     }
 }
