@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.*;
 import static org.assertj.core.api.Assertions.*;
 
+@Tag("controllers")
 class IndexControllerTest {
 
     IndexController controller;
