@@ -1,15 +1,18 @@
 package guru.springframework.sfgpetclinic.controllers;
 
-import org.junit.jupiter.api.*;
+import guru.springframework.sfgpetclinic.ControllerTests;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assumptions.*;
-import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
-@Tag("controllers")
-class IndexControllerTest {
+class IndexControllerTest implements ControllerTests {
 
     IndexController controller;
 
@@ -42,7 +45,7 @@ class IndexControllerTest {
 
     @Disabled("Demo of timeout")
     @Test
-    void testTimeout(){
+    void testTimeout() {
         assertTimeout(Duration.ofMillis(100), () -> {
             Thread.sleep(5000);
 
@@ -52,7 +55,7 @@ class IndexControllerTest {
 
     @Disabled("Demo of timeout")
     @Test
-    void testTimeoutPreemptively(){
+    void testTimeoutPreemptively() {
         assertTimeoutPreemptively(Duration.ofMillis(100), () -> {
             Thread.sleep(5000);
 
